@@ -1,0 +1,121 @@
+================================================================
+        智能零售分析系统 - 完整导出清单
+================================================================
+
+【项目信息】
+项目名称：智能零售用户行为分析系统
+版本：1.0.0 MVP
+导出日期：2026-05-29
+开发工具：CodeBuddy IDE
+
+【必需文件清单】
+
+✓ 核心文件
+  - app.py                    (主程序入口)
+  - requirements.txt          (Python 依赖列表)
+  - README.md                 (项目说明)
+  - 部署说明.md              (完整部署文档)
+  - 快速部署指南.md          (快速开始)
+
+✓ 启动脚本
+  - 一键启动.bat             (Windows 一键启动)
+  - 环境配置.bat             (Windows 环境配置)
+  - start.py                  (跨平台 Python 启动脚本)
+
+✓ 配置目录 (config/)
+  - settings.py               (系统配置)
+
+✓ 数据层 (data/)
+  - __init__.py
+  - database.py               (数据库初始化)
+  - data_generator.py         (模拟数据生成)
+
+✓ 页面模块 (pages/)
+  - __init__.py
+  - data_management.py        (数据管理页面)
+  - data_overview.py          (数据概览页面)
+  - behavior_analysis.py      (行为分析页面)
+  - user_profiling.py         (用户画像页面)
+  - ai_assistant.py           (AI 助手页面)
+
+✓ 工具函数 (utils/)
+  - __init__.py
+  - data_processor.py         (数据处理工具)
+
+✓ 模型目录 (models/)
+  - __init__.py
+
+✓ 静态资源 (assets/)
+  - (空目录，用于存放上传文件)
+
+✓ 部署配置 (deploy/)
+  - Dockerfile
+  - docker-compose.yml
+
+【可选文件】
+
+? 测试文件（不需要部署到生产环境）
+  - test_*.py
+  - final_test.py
+  - verify_phase2.py
+
+? 文档文件
+  - 修复总结.md
+  - 最终测试清单.md
+  - PHASE2_COMPLETE_SUMMARY.md
+  - PHASE2_FINAL_REPORT.md
+  - RFM错误修复报告.md
+
+【不导出文件】
+
+✗ Python 缓存
+  - __pycache__/ 目录
+  - *.pyc 文件
+
+✗ 数据库文件
+  - *.db 文件（应在目标电脑重新生成）
+
+✗ 日志文件
+  - *.log 文件
+
+✗ 临时文件
+  - .git/ 目录
+  - .vscode/ 目录
+
+【导出步骤】
+
+1. 双击运行 "打包项目.bat"
+2. 等待自动打包完成
+3. 检查 export_package/retail_analytics/ 目录
+4. 压缩成 ZIP 文件
+5. 复制到目标电脑
+
+【在目标电脑部署】
+
+1. 解压 ZIP 文件到任意目录
+2. 双击运行 "环境配置.bat"
+3. 等待依赖安装完成
+4. 双击运行 "一键启动.bat"
+5. 浏览器访问 http://localhost:8501
+
+【默认登录信息】
+
+账号：admin
+密码：admin123
+
+【系统要求】
+
+- Python 3.8 或更高版本
+- 内存：建议 4GB 以上
+- 磁盘：至少 500MB 可用空间
+- 浏览器：Chrome / Edge / Firefox 推荐
+
+【技术支持】
+
+- 查看 "部署说明.md" 了解详细配置
+- 查看 "快速部署指南.md" 快速开始
+- 查看 "CHECK_DEPENDENCIES.md" 检查依赖
+
+================================================================
+                        导出完成
+================================================================

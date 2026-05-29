@@ -1,0 +1,59 @@
+# Streamlit 配置文件
+# 作者: AI研究生
+# 日期: 2026-05-29
+
+[server]
+# 服务器端口
+port = 8501
+
+# 服务器地址，0.0.0.0 允许外部访问
+address = "0.0.0.0"
+
+# 禁用CORS（跨域资源共享）
+enableCORS = false
+
+# 禁用XSRF保护
+enableXsrfProtection = false
+
+# 无头模式（适用于生产环境）
+headless = true
+
+# 运行时不自动打开浏览器
+runOnSave = false
+
+[browser]
+# 禁用使用统计收集
+gatherUsageStats = false
+
+# 服务器URL（用于WebSocket连接）
+# serverURL = "https://your-domain.com"
+
+[logger]
+# 日志级别：debug, info, warning, error, critical
+level = "warning"
+
+[theme]
+# 主题配置
+primaryColor = "#1E88E5"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
+
+[client]
+# 显示缩放警告
+showZoomWarning = false
+
+# 显示配置警告
+showConfigWarning = false
+
+[runner]
+# 魔法命令
+magicEnabled = true
+
+# 代码热重载
+fastRerun = true
+
+[components]
+# 组件开发模式
+developmentMode = false

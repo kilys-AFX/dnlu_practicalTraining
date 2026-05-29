@@ -1,0 +1,43 @@
+# 智能零售用户行为分析系统 - 依赖包
+
+# 核心框架
+streamlit>=1.30.0
+streamlit-antd-components>=0.2.0
+streamlit-autorefresh>=0.0.4
+
+# 数据处理
+pandas>=2.0.0
+numpy>=1.24.0
+
+# 数据可视化
+plotly>=5.15.0
+
+# 机器学习
+scikit-learn>=1.3.0
+
+# 深度学习（购买意向预测模型）
+torch>=2.0.0
+torchvision>=0.15.0
+
+# 数据库
+# sqlite3 - Python 内置模块，无需安装
+
+# API 调用
+requests>=2.31.0
+openai>=1.0.0  # 用于调用 MiMo API
+
+# Excel 文件处理
+openpyxl>=3.1.0
+xlrd>=2.0.0
+
+# 性能优化
+psutil>=5.9.0
+
+# Docker 部署支持
+gunicorn>=21.0.0
+
+# 其他工具
+python-dateutil>=2.8.0
+pytz>=2023.3
+PyYAML>=6.0.0
+toml>=0.10.2
