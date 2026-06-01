@@ -207,14 +207,14 @@ def show_performance_dashboard():
         with col1:
             st.metric("总表数", len(db_stats))
         with col2:
-            st.metric("总行数", f"{total_rows:,}")
+            st.metric("总行数", f"{total_rows}")
         with col3:
             st.metric("总大小", f"{total_size_mb:.2f} MB")
         
         # 显示各表统计
         for table_name, stats in db_stats.items():
             with st.expander(f"表: {table_name}"):
-                st.write(f"**行数**: {stats['rows']:,}")
+                st.write(f"**行数**: {stats['rows']}")
                 st.write(f"**大小**: {stats['size_mb']:.2f} MB")
     
     # 性能日志

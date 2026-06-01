@@ -52,21 +52,21 @@ def show_realtime_dashboard():
     with col1:
         st.metric(
             label="在线用户",
-            value=f"{realtime_data['online_users']:,}",
+            value=f"{realtime_data['online_users']}",
             delta=random.randint(-50, 100)
         )
     
     with col2:
         st.metric(
             label="今日订单",
-            value=f"{realtime_data['today_orders']:,}",
+            value=f"{realtime_data['today_orders']}",
             delta=random.randint(10, 200)
         )
     
     with col3:
         st.metric(
             label="今日GMV",
-            value=f"¥{realtime_data['today_gmv']:,.2f}",
+            value=f"¥{realtime_data['today_gmv']:.2f}",
             delta=round(random.uniform(-5000, 20000), 2)
         )
     

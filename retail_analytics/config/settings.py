@@ -15,13 +15,13 @@ MYSQL_CONFIG = {
     "host": "localhost",
     "port": 3306,
     "user": "root",
-    "password": "your_password",  # 请填写您的 MySQL 密码
+    "password": "123456",  # 请填写您的 MySQL 密码
     "database": "retail_analytics",
     "charset": "utf8mb4"
 }
 
 # 使用数据库类型：'sqlite' 或 'mysql'
-DB_TYPE = "sqlite"  # 改为 "mysql" 启用 MySQL
+DB_TYPE = "mysql"  # 改为 "mysql" 启用 MySQL
 
 # MiMo API 配置（需要用户填写）
 MIMO_CONFIG = {

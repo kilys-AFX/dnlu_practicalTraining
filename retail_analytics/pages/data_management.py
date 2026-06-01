@@ -134,7 +134,7 @@ def show_data_preview_page():
         # 基本统计卡片
         m1, m2, m3 = st.columns(3)
         with m1:
-            st.metric("📊 总记录数", f"{len(df):,}")
+            st.metric("📊 总记录数", f"{len(df)}")
         with m2:
             st.metric("📋 字段数", len(df.columns))
         with m3:
@@ -221,9 +221,9 @@ def show_data_clean_page():
                 st.markdown("### 📊 清洗对比")
                 c1, c2, c3, c4 = st.columns(4)
                 with c1:
-                    st.metric("清洗前行数", f"{len(df):,}")
+                    st.metric("清洗前行数", f"{len(df)}")
                 with c2:
-                    st.metric("清洗后行数", f"{len(df_cleaned):,}")
+                    st.metric("清洗后行数", f"{len(df_cleaned)}")
                 with c3:
                     st.metric("删除行数", f"{len(df) - len(df_cleaned)}")
                 with c4:

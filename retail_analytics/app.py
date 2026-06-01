@@ -303,12 +303,15 @@ def show_home():
     # 快速指标
     try:
         from data.database import execute_query
-        total_users = execute_query("SELECT COUNT(*) as c FROM users").iloc[0]["c"]
-        total_orders = execute_query("SELECT COUNT(*) as c FROM orders").iloc[0]["c"]
-        total_gmv = execute_query("SELECT SUM(total_amount) as s FROM orders WHERE status!='Cancelled'").iloc[0]["s"] or 0
-        active_today = execute_query("SELECT COUNT(DISTINCT user_id) as c FROM orders WHERE date(order_date)=date('now')").iloc[0]["c"]
-    except:
-        total_users, total_orders, total_gmv, active_today = 0, 0, 0, 0
+        total_users = int(execute_query("SELECT COUNT(*) as c FROM users").iloc[0]["c"] or 0)
+        total_orders = int(execute_query("SELECT COUNT(*) as c FROM orders").iloc[0]["c"] or 0)
+        total_gmv_result = execute_query("SELECT SUM(total_amount) as s FROM orders WHERE status!='Cancelled'").iloc[0]["s"]
+        total_gmv = float(total_gmv_result) if total_gmv_result else 0.0
+        active_today_result = execute_query("SELECT COUNT(DISTINCT user_id) as c FROM orders WHERE date(order_date)=date('now')").iloc[0]["c"]
+        active_today = int(active_today_result) if active_today_result else 0
+    except Exception as e:
+        print(f"获取数据失败: {e}")
+        total_users, total_orders, total_gmv, active_today = 0, 0, 0.0, 0
 
     m1, m2, m3, m4 = st.columns(4)
 
@@ -319,7 +322,7 @@ def show_home():
                 <div class="metric-icon-circle">👥</div>
                 <div class="metric-badge">总用户</div>
             </div>
-            <div class="metric-value">{total_users:,}</div>
+            <div class="metric-value">{total_users}</div>
             <div class="metric-label">注册用户总数</div>
         </div>
         """, unsafe_allow_html=True)
@@ -331,7 +334,7 @@ def show_home():
                 <div class="metric-icon-circle">📦</div>
                 <div class="metric-badge">订单</div>
             </div>
-            <div class="metric-value">{total_orders:,}</div>
+            <div class="metric-value">{total_orders}</div>
             <div class="metric-label">累计订单总数</div>
         </div>
         """, unsafe_allow_html=True)
@@ -343,7 +346,7 @@ def show_home():
                 <div class="metric-icon-circle">💰</div>
                 <div class="metric-badge">GMV</div>
             </div>
-            <div class="metric-value">¥{total_gmv:,.0f}</div>
+            <div class="metric-value">¥{total_gmv:.2f}</div>
             <div class="metric-label">累计销售额</div>
         </div>
         """, unsafe_allow_html=True)
@@ -355,7 +358,7 @@ def show_home():
                 <div class="metric-icon-circle">🔥</div>
                 <div class="metric-badge">今日</div>
             </div>
-            <div class="metric-value">{active_today:,}</div>
+            <div class="metric-value">{active_today}</div>
             <div class="metric-label">今日活跃用户</div>
         </div>
         """, unsafe_allow_html=True)

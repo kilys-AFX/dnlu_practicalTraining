@@ -157,7 +157,7 @@ def _generate_pdf_weasyprint(data_dict, output_path):
         "generate_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_users": data_dict.get("total_users", 0),
         "total_orders": data_dict.get("total_orders", 0),
-        "total_gmv": f"{data_dict.get('total_gmv', 0):,.2f}",
+        "total_gmv": f"{data_dict.get('total_gmv', 0):.2f}",
         "conversion_rate": round(data_dict.get("conversion_rate", 0), 2),
         "user_gender": data_dict.get("user_gender", []),
         "rfm_segments": data_dict.get("rfm_segments", {}),
@@ -211,7 +211,7 @@ def _generate_pdf_reportlab(data_dict, output_path):
         ["指标", "数值"],
         ["总用户数", str(data_dict.get("total_users", 0))],
         ["总订单数", str(data_dict.get("total_orders", 0))],
-        ["GMV", f"¥{data_dict.get('total_gmv', 0):,.2f}"],
+        ["GMV", f"¥{data_dict.get('total_gmv', 0):.2f}"],
         ["转化率", f"{data_dict.get('conversion_rate', 0):.2f}%"],
     ]
     
